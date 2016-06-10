@@ -7,10 +7,10 @@ services:
     volumes:
       - "web:/usr/share/nginx/html"
     environment:
-      - VIRTUAL_HOST=lobr.fr,home.lobr.fr
+      - VIRTUAL_HOST=docker.tolron.fr
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=lobr.fr,home.lobr.fr
-      - LETSENCRYPT_EMAIL=loric.brevet@gmail.com
+      - LETSENCRYPT_HOST=docker.tolron.fr
+      - LETSENCRYPT_EMAIL=sebastien@tolron.fr
     network_mode: "bridge"
 
   gen:

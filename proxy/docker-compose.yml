@@ -15,7 +15,7 @@ services:
       - "./passwords:/etc/nginx/htpasswd"
       - "./proxy.conf:/etc/nginx/proxy.conf"
     environment:
-      - DEFAULT_HOST=home.lobr.fr
+      - DEFAULT_HOST=docker.tolron.fr
     network_mode: "bridge"
 
   letsencrypt:
