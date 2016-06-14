@@ -8,17 +8,14 @@ services:
       - "32400:32400"
     volumes:
       - "./Preferences.xml:/config/Library/Application Support/Plex Media Server/Preferences.xml"
-      - "media:/data"
+      - "/data:/data"
     environment:
       - PUID=1000
       - PGID=1000
       - VERSION=plexpass
-      - VIRTUAL_HOST=plex.lobr.fr
+      - VIRTUAL_HOST=streaming.docker.tolron.fr
       - VIRTUAL_PORT=32400
-      - LETSENCRYPT_HOST=plex.lobr.fr
-      - LETSENCRYPT_EMAIL=loric.brevet@gmail.com
+      - LETSENCRYPT_HOST=streaming.docker.tolron.fr
+      - LETSENCRYPT_EMAIL=sebastien@tolron.fr
     network_mode: "bridge"
 
-volumes:
-  media:
-    external: true

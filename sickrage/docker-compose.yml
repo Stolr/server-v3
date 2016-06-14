@@ -5,21 +5,18 @@ services:
     image: linuxserver/sickrage
     container_name: sickrage
     ports:
-      - "8081:8081"
+      - "8082:8082"
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
       - "./config.ini:/config/config.ini"
-      - "media:/downloads"
-      - "media:/tv"
+      - "/data:/downloads"
+      - "/data:/tv"
     environment:
       - PUID=1000
       - PGID=1000
-      - VIRTUAL_HOST=sickrage.lobr.fr
-      - VIRTUAL_PORT=8081
-      - LETSENCRYPT_HOST=sickrage.lobr.fr
-      - LETSENCRYPT_EMAIL=loric.brevet@gmail.com
+      - VIRTUAL_HOST=sickrage.docker.tolron.fr
+      - VIRTUAL_PORT=8082
+      - LETSENCRYPT_HOST=sickrage.docker.tolron.fr
+      - LETSENCRYPT_EMAIL=sebastien@tolron.fr
     network_mode: "bridge"
 
-volumes:
-  media:
-    external: true

@@ -2,12 +2,12 @@ version: '2'
 
 services:
   app:
-    image: dockerui/dockerui
+    image: uifd/ui-for-docker
     container_name: docker-ui
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
     environment:
-      - VIRTUAL_HOST=docker-ui.lobr.fr
-      - LETSENCRYPT_HOST=docker-ui.lobr.fr
-      - LETSENCRYPT_EMAIL=loric.brevet@gmail.com
+      - VIRTUAL_HOST=docker-ui.docker.tolron.fr
+      - LETSENCRYPT_HOST=docker-ui.docker.tolron.fr
+      - LETSENCRYPT_EMAIL=sebastien@tolron.fr
     network_mode: "bridge"

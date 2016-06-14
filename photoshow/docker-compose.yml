@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  app:
+    image: linuxserver/photoshow
+    container_name: gallery
+    ports:
+        - "82:82"
+    volumes:
+      - "/data/gallery/config:/config"
+      - "/data/gallery/Pictures:/Pictures"
+      - "/data/gallery/Thumbs:/Thumbs"
+    environment:
+      - VIRTUAL_HOST=gallery.docker.tolron.fr
+      - VIRTUAL_PROTO=https
+      - VIRTUAL_PORT=82
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    network_mode: "bridge"

@@ -8,18 +8,14 @@ services:
       - "5050:5050"
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
-      - "./config.ini:/config/config.ini"
-      - "media:/downloads"
-      - "media:/movies"
+      - "/data:/downloads"
+      - "/data:/movies"
     environment:
       - PUID=1000
       - PGID=1000
-      - VIRTUAL_HOST=couchpotato.lobr.fr
+      - VIRTUAL_HOST=couchpotato.docker.tolron.fr
       - VIRTUAL_PORT=5050
-      - LETSENCRYPT_HOST=couchpotato.lobr.fr
-      - LETSENCRYPT_EMAIL=loric.brevet@gmail.com
+      - LETSENCRYPT_HOST=couchpotato.docker.tolron.fr
+      - LETSENCRYPT_EMAIL=sebastien@tolron.fr
     network_mode: "bridge"
 
-volumes:
-  media:
-    external: true

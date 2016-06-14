@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  app:
+    image: cptincrdbl/utorrent-server
+    container_name: torrent
+    ports:
+      - "6881:6881"
+      - "8080:8080"
+    volumes:
+      - "/data:/data"
+    environment:
+      - VIRTUAL_HOST=torrent.docker.tolron.fr
+      - VIRTUAL_PORT=8080
+      - LETSENCRYPT_HOST=torrent.docker.tolron.fr
+      - LETSENCRYPT_EMAIL=sebastien@tolron.fr
+    network_mode: "bridge"
+
