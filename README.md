@@ -11,3 +11,9 @@ Then subfolders can be created in this volume like:
  - Series
 
 Becareful, these folders should have permissions 755.
+
+
+TODO
+
+-- Ajout htpassword custom pour download private folder
+-- Ajout de custom pour redirection url ( genre plex et urttornet )
